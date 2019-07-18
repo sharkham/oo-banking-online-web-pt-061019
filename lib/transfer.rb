@@ -21,6 +21,7 @@ class Transfer
       sender.withdraw(@amount)
       receiver.deposit(@amount)
       self.status = "complete"
+      binding.pry
     else
       self.status = "rejected"
       "Transaction rejected. Please check your account balance."
