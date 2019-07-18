@@ -1,4 +1,4 @@
 class Transfer
-  def initialize(account1, account2, amount)
+  def initialize(sender, receiver, status)
   end
 end
