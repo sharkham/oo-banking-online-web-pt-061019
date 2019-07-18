@@ -19,8 +19,8 @@ class Transfer
   end
 
   def execute_transaction
-    if self.valid? == false 
-      binding.pry
+    binding.pry 
+    if self.valid? == false
       self.status = "rejected"
       "Transaction rejected. Please check your account balance."
     #Do the transfer IF both accounts are still valid after
@@ -33,4 +33,5 @@ class Transfer
 
     end
   end
+
 end
