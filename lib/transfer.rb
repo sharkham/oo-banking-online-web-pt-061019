@@ -28,20 +28,8 @@ class Transfer
     else
       self.status = "rejected"
       "Transaction rejected. Please check your account balance."
+      binding.pry 
     end
-
-    # if self.valid? == false
-    #   self.status = "rejected"
-    #   "Transaction rejected. Please check your account balance."
-    # #Do the transfer IF both accounts are still valid after
-    # #withdrawing amount.
-    # #if sender.withdraw(@amount)
-    # elsif self.valid? && self.status == "pending"
-    #   sender.withdraw(@amount)
-    #   receiver.deposit(@amount)
-    #   self.status = "complete"
-    #
-    # end
   end
 
 end
