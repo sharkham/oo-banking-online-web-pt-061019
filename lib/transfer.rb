@@ -20,15 +20,17 @@ class Transfer
 
   def execute_transaction
     if self.valid? && self.status == "pending"
-      sender.withdraw(@amount)
-      receiver.deposit(@amount)
+      sender.withdraw(self.amount)
+      receiver.deposit(self.amount)
     end
     if self.valid?
       self.status = "complete"
     else
+      receiver.withdraw(self.amount)
+      sender.deposit(self.amount)
       self.status = "rejected"
       "Transaction rejected. Please check your account balance."
-      binding.pry 
+      binding.pry
     end
   end
 
