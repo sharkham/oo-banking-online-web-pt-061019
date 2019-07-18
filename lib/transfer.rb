@@ -20,12 +20,13 @@ class Transfer
 
   def execute_transaction
     if !self.valid?
+      binding.pry 
       self.status = "rejected"
       "Transaction rejected. Please check your account balance."
     #Do the transfer IF both accounts are still valid after
     #withdrawing amount.
     #if sender.withdraw(@amount)
-binding.pry
+      binding.pry
     elsif self.valid? && self.status == "pending"
       sender.withdraw(@amount)
       receiver.deposit(@amount)
