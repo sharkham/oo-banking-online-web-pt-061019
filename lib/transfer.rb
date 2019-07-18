@@ -30,7 +30,6 @@ class Transfer
       sender.deposit(self.amount)
       self.status = "rejected"
       "Transaction rejected. Please check your account balance."
-      binding.pry
     end
   end
 
